@@ -1,6 +1,4 @@
 from flask import Flask , render_template
-
-
 app = Flask(__name__)
 
 
@@ -13,14 +11,16 @@ def home():
 
 
 
-@app.route('/about')
+# @app.route('/about')
 
+# def about():
+#     return render_template('about.html')
+@app.route('/about', strict_slashes=False)
 def about():
-    return render_template('about.html')
-
+    return render_template("about.html")
 
 
 if __name__ == '__main__':
 
 
-    app.run(debug=True)
+     app.run()
